@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Student Registration Form</h1>
+
+    <!-- USN (ONLY EDITABLE FIELD) -->
+    <div class="form-group">
+        <label for="usn">USN *</label>
+        <div class="usn-row">
+            <input type="text" id="usn" placeholder="Enter USN" required>
+            <button type="button" onclick="fetchStudentData()">Fetch Details</button>
+        </div>
+    </div>
+
+    <form id="studentForm" onsubmit="handleSubmit(event)" enctype="multipart/form-data">
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" readonly>
+        </div>
+
+        <div class="form-group">
+            <label>Gender</label><br>
+            <input type="radio" name="gender" id="genderMale" value="Male" disabled> Male
+            <input type="radio" name="gender" id="genderFemale" value="Female" disabled> Female
+        </div>
+
+        <div class="form-group">
+            <label for="branch">Branch</label>
+            <input type="text" id="branch" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="tenth">10th Percentage</label>
+            <input type="number" id="tenth" step="0.01" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="twelfth">12th/Diploma Percentage</label>
+            <input type="number" id="twelfth" step="0.01" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="cgpa">CGPA</label>
+            <input type="number" id="cgpa" step="0.01" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="mobile">Mobile</label>
+            <input type="tel" id="mobile" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="backlog">Backlog</label>
+            <input type="text" id="backlog" readonly>
+        </div>
+
+        <!-- Resume Upload -->
+        <div class="form-group">
+            <label for="resume">Upload Resume *</label>
+            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+
+        </div>
+
+        <button type="submit">Submit</button>
+        <button type="button" onclick="clearForm()">Clear</button>
+
+    </form>
+</div>
+
+<script src="script_dynamic.js"></script>
+
+</body>
+</html>
